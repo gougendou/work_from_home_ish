@@ -1,5 +1,4 @@
-<h1>Workspaces#show</h1>
-<p>Find me in app/views/workspaces/show.html.erb</p>
+<h1>Workspaces</h1>
 
 <div class="map" style="background-image: url('https://static.israel21c.org/www/uploads/2021/02/WeWork_Azrieli_Town_-_main.jpg')"></div>
 
@@ -11,7 +10,7 @@
         <p class="flat-show-address"><%= @workspace.address %></p>
       </div>
       <div class="flat-show-card">
-        <h3>A bit more about this flat...</h3>
+        <h3>A bit more about this desk to rent...</h3>
         <p><%= @workspace.description %></p>
         <div class="map" style="background-image: url('https://cdn.autonomous.ai/static/upload/images/common/upload/20210918/10-Gaming-Desk-Setup-Hacks-for-Every-Gamer_55ff4d6937e.jpg'")></div>
       </div>
@@ -38,9 +37,9 @@
         <div class="flex">
           <div class="flex">
             <% if @workspace.booking_status %>
-            <p><font color="red"><%= "Available" %></font></p>
+            <p><font color="green"><%= "Available" %></font></p>
             <% else %>
-            <p><font color="green"><%= "Unavailable" %></font></p>
+            <p><font color="red"><%= "Unavailable" %></font></p>
             <% end %>
           </div>
           <div class="flex ms-3">
