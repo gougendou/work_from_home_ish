@@ -5,7 +5,7 @@ class CreateWorkspaces < ActiveRecord::Migration[7.0]
       t.float :price
       t.string :address
       t.string :photo
-      t.text :desctiption
+      t.text :description
       t.boolean :booking_status
 
       t.timestamps

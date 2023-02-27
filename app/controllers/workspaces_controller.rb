@@ -1,9 +1,9 @@
 class WorkspacesController < ApplicationController
   def index
-    @workspace = Workspace.find(params[:id])
+    @workspaces = Workspace.all
   end
 
   def show
-    @workspaces = Workspace.all
+    @workspace = Workspace.find(params[:id])
   end
 end
