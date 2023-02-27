@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_123942) do
     t.float "price"
     t.string "address"
     t.string "photo"
-    t.text "desctiption"
+    t.text "description"
     t.boolean "booking_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
