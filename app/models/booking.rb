@@ -1,11 +1,4 @@
 class Booking < ApplicationRecord
-  def new
-    @booking = Booking.new
-  end
-
-  def create
-  end
-
-  def destroy
-  end
+  belongs_to :user
+  belongs_to :workspace
 end
