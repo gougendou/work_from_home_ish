@@ -2,18 +2,18 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid d-flex justify-content-center">
 
   <div class="col-sm-7">
     <div class="row">
       <% @workspaces.each do |workspace| %>
         <div class="col-xs-12 col-sm-6">
-          <%= link_to workspace_path(w) do %>
+          <%= link_to workspace_path(workspace) do %>
             <div class="cardContainer">
               <div class="card-image"
-                  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path workspace.photo.path, width: 400,height: 300, crop: :thumb %>')">
-                <div class="card-first-name"><%= workspace.user.first_name %></div>
-                <%= cl_image_tag workspace.user.photo.path, width: 50, height: 50, crop: :thumb, gravity: :face, class: "card-user avatar" %>
+                  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn.autonomous.ai/static/upload/images/common/upload/20210918/10-Gaming-Desk-Setup-Hacks-for-Every-Gamer_55ff4d6937e.jpg', width: 400,height: 300, crop: :thumb %>')">
+                <div class="card-first-name"><p><%= "Matt" %></p></div>
+                <%# <%= width: 50, height: 50, crop: :thumb, gravity: :face, class: "card-user avatar" %>
               </div> <!-- fin card-image -->
               <div class="card">
                 <div class="card-description">
@@ -31,33 +31,9 @@
     </div>  <!-- fin du row -->
   </div> <!-- fin du col-sm-8 -->
 
-  <div class="col-sm-5">
+  <div class="col-sm-5" >
     <div class="workspaces-map-wrapper">
-      <div id="workspaces-map" style="width: 100%; height: 400px;"></div>
+      <div id="workspaces-map" style="width: 100%; height: 400px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn.londonandpartners.com/visit/general-london/discover/67820-640x360-interactive-map-640.jpg')"></div>
     </div>
   </div>
 </div>
-
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({
-        provider: {
-          scrollwheel: false,
-          zoomControl: false
-        },
-        internal: { id: 'workspaces-map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    });
-
-  <% end %>
-<% end %>
