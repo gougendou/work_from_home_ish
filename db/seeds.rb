@@ -13,7 +13,8 @@ require 'faker'
     name: Faker::Coffee.blend_name,
     price: rand(15..40),
     address: Faker::Address.full_address,
-    description: Faker::Coffee.notes
+    description: Faker::Coffee.notes,
+    booking_status: true
   )
 end
 
