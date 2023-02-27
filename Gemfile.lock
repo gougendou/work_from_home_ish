@@ -164,7 +164,9 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
+front-end-show
     nokogiri (1.14.2-arm64-darwin)
+ master
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
@@ -270,7 +272,11 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+ front-end-show
+  x86_64-darwin-21
+
   arm64-darwin-22
+master
   x86_64-linux
 
 DEPENDENCIES
