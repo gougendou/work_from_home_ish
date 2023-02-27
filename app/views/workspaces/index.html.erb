@@ -1,1 +1,63 @@
-<h1>Find a perfect place to work from home...ish</h1>
+<h1 class="text-center title-index-padding">Perfect place <strong id="title-index"></strong> to work from <strong id="title-index"></strong> Home...ish</h1>
+
+
+
+<div class="container-fluid">
+
+  <div class="col-sm-7">
+    <div class="row">
+      <% @workspaces.each do |workspace| %>
+        <div class="col-xs-12 col-sm-6">
+          <%= link_to workspace_path(w) do %>
+            <div class="cardContainer">
+              <div class="card-image"
+                  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path workspace.photo.path, width: 400,height: 300, crop: :thumb %>')">
+                <div class="card-first-name"><%= workspace.user.first_name %></div>
+                <%= cl_image_tag workspace.user.photo.path, width: 50, height: 50, crop: :thumb, gravity: :face, class: "card-user avatar" %>
+              </div> <!-- fin card-image -->
+              <div class="card">
+                <div class="card-description">
+                  <p><strong id="city"><%= workspace.description %></strong></p>
+                  <p><%= workspace.name %></p>
+                </div>
+                <div class="card-price">
+                  <h2> <%= workspace.price %> €</h2>
+                </div> <!-- fin card-price -->
+              </div> <!-- fin card -->
+            </div> <!-- fin cardContainer -->
+          <% end %>
+        </div> <!-- fin de col -->
+      <% end %>
+    </div>  <!-- fin du row -->
+  </div> <!-- fin du col-sm-8 -->
+
+  <div class="col-sm-5">
+    <div class="workspaces-map-wrapper">
+      <div id="workspaces-map" style="width: 100%; height: 400px;"></div>
+    </div>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: {
+          scrollwheel: false,
+          zoomControl: false
+        },
+        internal: { id: 'workspaces-map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+
+  <% end %>
+<% end %>
