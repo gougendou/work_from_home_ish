@@ -1,5 +1,10 @@
-<h1 class="text-center title-index-padding">Perfect place <strong id="title-index"></strong> to work from <strong id="title-index"></strong> Home...ish</h1>
-
+<div class="container mt-3">
+    <div class="row padding-landing">
+      <div class="col-12 title-index-padding">
+        <h1 class="landing-page-title">Work from home.</h1>
+        <h1 class="landing-page-title-2 typing-effect"><strong>Anywhere.</strong></h1>
+      </div>
+    </div>
 
   <div class="container mt-3">
     <div class="row">
@@ -11,18 +16,18 @@
   <div class="row">
     <% @workspaces.each do |workspace| %>
       <div class="col-md-4">
-        <a href="<%= workspace_path(workspace) %>">
+        <a class="plain-link" href="<%= workspace_path(workspace) %>">
           <div class="flat-card">
             <div class="flat-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')"></div>
-            <div class="flat-card-content">
-              <div class="flat-card-title">
+            <div class="flat-card-content" style="overflow: hidden;">
+              <div class="booking-workspace-title">
                 <h4><%= workspace.name %></h4>
               </div>
-              <div class="flex-align">
+              <div class="flex-align booking-medium-text">
                 <p><%= workspace.address %></p>
               </div>
               <div class="flex-align">
-                <div class="align-items">
+                <div class="align-items booking-small-text bold">
                   <span>£<%= workspace.price %></span>
                 </div>
               </div>
