@@ -128,6 +128,7 @@ a:hover {
 }
 .padding-landing{
   padding-top: 425px;
+  padding-left: 20px;
 }
 .typing-effect {
   border-right: 2px solid #000;
@@ -146,4 +147,12 @@ a:hover {
   font-size: 80px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:#E29578
+}
+
+.landing-page-image {
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  width: 100%;
+  height:auto;
 }
