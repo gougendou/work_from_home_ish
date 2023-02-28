@@ -23,14 +23,23 @@ class WorkspacesController < ApplicationController
   end
 
   def destroy
-    @workspace = Workspace.find[params[:id]]
+    @workspace = Workspace.find(params[:id])
     @workspace.delete
     redirect_to workspaces_path, status: :see_other
+  end
+
+  def edit
+    @workspace = Workspace.find(params[:id])
+  end
+
+  def update
+    @workspace.update(strong_params)
+    redirect_to workspaces_path
   end
 
   private
 
   def strong_params
-    params.require(:workspace).permit(:name, :price, :address, :photos)
+    params.require(:workspace).permit(:name, :price, :address, :photos, :description)
   end
 end
