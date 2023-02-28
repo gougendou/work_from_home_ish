@@ -11,6 +11,7 @@
       <%= f.input :address, label: "Located in:", placeholder: "London" %>
       <%= f.input :description, label: "Description of my place:", placeholder: "Beautiful workspace with coffee on tap" %>
       <%= f.input :price, label: "Price per hour in £", placeholder: "24" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <br>
       <br>
       <hr>
