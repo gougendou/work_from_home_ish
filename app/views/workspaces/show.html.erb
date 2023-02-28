@@ -40,15 +40,16 @@
         <div class="flex">
           <div class="flex">
             <% if @workspace.booking_status %>
-            <p><font color="red"><%= "Available" %></font></p>
+            <p><font color="green"><%= "Available" %></font></p>
             <% else %>
-            <p><font color="green"><%= "Unavailable" %></font></p>
+            <p><font color="red"><%= "Unavailable" %></font></p>
             <% end %>
           </div>
-          <div class="flex ms-3">
-            £<%= @workspace.price %>
-          </div>
         </div>
+        <div class="flex">
+          £<%= @workspace.price %>0 per day
+        </div>
+
       </div>
       <div class="flat-show-card">
         <div class="flex-align">
