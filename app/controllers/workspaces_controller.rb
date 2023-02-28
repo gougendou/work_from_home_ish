@@ -23,13 +23,13 @@ class WorkspacesController < ApplicationController
   end
 
   def destroy
-    @workspace = Workspace.find[params[:id]]
+    @workspace = Workspace.find(params[:id])
     @workspace.delete
     redirect_to workspaces_path, status: :see_other
   end
 
   def edit
-    @workspace = Workspace.find[params[:id]]
+    @workspace = Workspace.find(params[:id])
   end
 
   def update
