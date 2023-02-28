@@ -10,7 +10,7 @@
     <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true %>
 
     <%# added by Sam to fix JS error in heroku %>
-    <%= javascript_include_tag "bootstrap" if Rails.env.development? %>
+    <%# <%= javascript_include_tag "bootstrap" if Rails.env.development? %>
   </head>
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
