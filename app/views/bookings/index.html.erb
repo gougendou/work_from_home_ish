@@ -1,1 +1,37 @@
-<h1>testing </h1>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 bold">
+      <h1><strong><%= current_user.first_name %>'s bookings</strong></h1>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-md-4">
+        <a class="plain-link" href="<%=workspace_path(booking.workspace_id)%>">
+        <div class="flat-card">
+          <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80')"></div>
+          <div class="flat-card-content" style="overflow: hidden;">
+            <div class="booking-workspace-title">
+              <h4><%= booking.workspace.name %></h4>
+            </div>
+            <div class="flex-align booking-medium-text"">
+              <p><%= booking.workspace.address %></p>
+            </div>
+            <div class="flex-align booking-small-text">
+              <p><%= booking.start_date.strftime("%-d<sup><suffix></sup> %B %Y").html_safe %></p>
+            </div>
+            <div class="flex-align booking-small-text bold">
+              <span>£<%= booking.workspace.price %></span>
+            </div>
+            <div class="flex-align days-until">
+              <p><%= pluralize((booking.start_date - Date.today).to_i, "day") %> from today!</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      </div>
+    <% end %>
+  </div>
+</div>
