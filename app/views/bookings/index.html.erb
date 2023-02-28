@@ -20,14 +20,16 @@
               <p><%= booking.workspace.address %></p>
             </div>
             <div class="flex-align booking-small-text">
-              <p><%= booking.start_date.strftime("%-d<sup><suffix></sup> %B %Y").html_safe %></p>
-            </div>
-            <div class="flex-align booking-small-text bold">
-              <span>£<%= booking.workspace.price %></span>
+              <p class = "my-0"><%= booking.start_date.strftime("%-d<sup><suffix></sup> %B %Y").html_safe %> - <%= booking.end_date.strftime("%-d<sup><suffix></sup> %B %Y").html_safe %></p>
             </div>
             <div class="flex-align days-until">
               <p><%= pluralize((booking.start_date - Date.today).to_i, "day") %> from today!</p>
             </div>
+            <div class="flex-align booking-small-text bold">
+              <%# <span>£<%= booking.workspace.price.round %></span>
+              <span>£<%= ((booking.end_date - booking.start_date) * booking.workspace.price).round %> total (£<%=booking.workspace.price.round%> / day) </span>
+            </div>
+
           </div>
         </div>
       </a>
