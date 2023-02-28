@@ -16,7 +16,7 @@ class WorkspacesController < ApplicationController
     @user = current_user
     @workspace.user = @user
     if @workspace.save
-      redirect_to workspaces_path
+      redirect_to workspace_path(@workspace)
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,8 +33,9 @@ class WorkspacesController < ApplicationController
   end
 
   def update
+    @workspace = Workspace.find(params[:id])
     @workspace.update(strong_params)
-    redirect_to workspaces_path
+    redirect_to workspace_path(@workspace)
   end
 
   private

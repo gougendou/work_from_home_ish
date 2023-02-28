@@ -1,1 +1,27 @@
-<p>we are in workspaces edit</p>
+<div id="wrapper" class="d-flex justify-content-center">
+  <div class="row">
+    <div class="text-left form-login">
+      <h2 class="text-center"><strong>Add my Workspace</strong></h2>
+      <br>
+      <%= simple_form_for @workspace do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, placeholder: "Name of my amazing Workspace", :label_html => { :class => "label-css"} %>
+      <%= f.input :address, label: "Located in:", placeholder: "London" %>
+      <%= f.input :description, label: "Description of my place:", placeholder: "Beautiful workspace with coffee on tap" %>
+      <%= f.input :price, label: "Price per hour in £", placeholder: "24" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <br>
+      <br>
+      <hr>
+      <h4><strong></strong> </h4>
+      <hr>
+      <div class="d-flex text-center">
+      <%= f.button :submit, "update my workspace", class: "btn btn-primary btn-lg"%>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+
+</div>
+</div>
