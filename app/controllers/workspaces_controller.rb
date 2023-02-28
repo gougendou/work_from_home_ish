@@ -24,7 +24,7 @@ class WorkspacesController < ApplicationController
 
   def destroy
     @workspace = Workspace.find(params[:id])
-    @workspace.delete
+    @workspace.destroy
     redirect_to workspaces_path, status: :see_other
   end
 
