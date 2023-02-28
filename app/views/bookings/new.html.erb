@@ -1,1 +1,6 @@
 <p>we will need to have a select start and end date for the booking</p>
+      <%= simple_form_for [@workspace, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>

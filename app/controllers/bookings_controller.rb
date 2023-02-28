@@ -1,14 +1,14 @@
 class BookingsController < ApplicationController
   def new
+    @workspace = Workspace.find(params[:workspace_id])
     @booking = Booking.new
   end
 
   def create
-    @booking = Booking.new(strong_params)
     @workspace = Workspace.find(params[:workspace_id])
+    @booking = Booking.new(strong_params)
     @booking.workspace = @workspace
-    @user = current_user
-    booking.user = @user
+    @booking.user = current_user
     if @booking.save
       redirect_to workspaces_path
     else
