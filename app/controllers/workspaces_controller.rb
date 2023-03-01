@@ -4,8 +4,8 @@ class WorkspacesController < ApplicationController
       # The `geocoded` scope filters only flats with coordinates
     @markers = @workspaces.geocoded.map do |workspace|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: workspace.latitude,
+        lng: workspace.longitude
       }
     end
   end
