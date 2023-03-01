@@ -1,6 +1,13 @@
 class WorkspacesController < ApplicationController
   def index
     @workspaces = Workspace.all
+      # The `geocoded` scope filters only flats with coordinates
+    @markers = @workspaces.geocoded.map do |workspace|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
