@@ -24,7 +24,7 @@
       <div class="col-md-4">
         <a class="plain-link" href="<%= workspace_path(workspace) %>">
           <div class="flat-card">
-            <div class="flat-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')"></div>
+            <div class="flat-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path workspace.photos[0].key, crop: :fill %>')"></div>
             <div class="flat-card-content" style="overflow: hidden;">
               <div class="booking-workspace-title">
                 <h4><%= workspace.name %></h4>
