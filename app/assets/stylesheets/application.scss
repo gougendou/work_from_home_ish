@@ -127,8 +127,9 @@ a:hover {
   color: lightgray;
 }
 .padding-landing{
-  padding-top: 425px;
+  padding-top: 225px;
   padding-left: 20px;
+  padding-bottom: 250px;
 }
 .typing-effect {
   border-right: 2px solid #000;
@@ -153,4 +154,17 @@ a:hover {
   background-position: center;
   background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+}
+
+.new-booking-title{
+  font-weight: bolder;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.new-booking-title-2{
+  font-weight: light;
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #E29578;
 }
