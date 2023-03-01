@@ -23,12 +23,12 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to workspaces_path, status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
 
   def strong_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, workspace_id)
   end
 end
