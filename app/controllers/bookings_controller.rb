@@ -2,10 +2,11 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
   end
-  def new
-    @workspace = Workspace.find(params[:workspace_id])
-    @booking = Booking.new
-  end
+  # removed as we handle new bookings in the workspace controller
+  # def new
+  #   @workspace = Workspace.find(params[:workspace_id])
+  #   @booking = Booking.new
+  # end
 
   def create
     @workspace = Workspace.find(params[:workspace_id])

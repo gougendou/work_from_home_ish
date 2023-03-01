@@ -27,7 +27,7 @@
             </div>
             <div class="flex-align booking-small-text bold">
               <%# <span>£<%= booking.workspace.price.round %></span>
-              <span>£<%= ((booking.end_date - booking.start_date) * booking.workspace.price).round %> total (£<%=booking.workspace.price.round%> / day) </span>
+              <span>£<%= ((booking.end_date - booking.start_date + 1) * booking.workspace.price).round %> total (£<%=booking.workspace.price.round%> / day) </span>
             </div>
 
           </div>
