@@ -124,7 +124,7 @@ a:hover {
   font-weight: light;
   font-size: 80px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color:#333
+  color: lightgray;
 }
 .padding-landing{
   padding-top: 425px;
@@ -140,7 +140,7 @@ a:hover {
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 35%; }
+  to { width: 32%; }
 }
 .landing-page-title-2{
   font-weight: light;
@@ -153,6 +153,4 @@ a:hover {
   background-position: center;
   background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
-  width: 100%;
-  height:auto;
 }

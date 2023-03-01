@@ -17,8 +17,13 @@
     <div class="col-4">
       <div class="flat-show-card">
         <h5>Book this desk!</h5>
+        <%= simple_form_for [@workspace, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true  %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
 
-        <form action="">
+        <%# <form action="">
           <div class="input-group">
             <span class="input-group-text" id="start-date-label">From:</span>
             <input type="text" class="form-control" placeholder="06/03/2022" aria-label="start-date" aria-describedby="start-date-label">
@@ -28,22 +33,23 @@
             <input type="text" class="form-control" placeholder="06/03/2022" aria-label="end-date" aria-describedby="start-date-label">
           </div>
           <input type="submit" value="Book" class="btn btn-primary mt-2" style="width: 100%">
-        </form>
+        </form> %>
       </div>
       <div class="flat-show-card">
         <h3><b>Details</b></h3>
         <div class="flex">
           <div class="flex">
             <% if @workspace.booking_status %>
-            <p><font color="red"><%= "Available" %></font></p>
+            <p><font color="green"><%= "Available" %></font></p>
             <% else %>
-            <p><font color="green"><%= "Unavailable" %></font></p>
+            <p><font color="red"><%= "Unavailable" %></font></p>
             <% end %>
           </div>
-          <div class="flex ms-3">
-            £<%= @workspace.price %>
-          </div>
         </div>
+        <div class="flex">
+          £<%= @workspace.price.round %> per day
+        </div>
+
       </div>
       <div class="flat-show-card">
         <div class="flex-align">
