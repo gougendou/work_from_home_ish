@@ -1,9 +1,9 @@
-<h2 class="text-center">Share your <strong id="red-word">workspace</strong> ! It's <strong id="red-word"></strong> social and <strong id="red-word"> fun </strong> ! </h2>
-
+<div class="row" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); background-size: 1449px auto;">
 <div id="wrapper" class="d-flex justify-content-center">
   <div class="row">
-    <div class="text-left form-login">
-      <h2 class="text-center"><strong>Add my Workspace</strong></h2>
+    <div class="text-c form-login" style="padding-top: 50px">
+      <h2 class="text-center new-booking-title">Add your workspace.</h2>
+      <h2 class="text-center new-booking-title-2">Build a community. Generate extra income.</h2>
       <br>
       <%= simple_form_for @workspace do |f| %>
       <%= f.error_notification %>
@@ -18,7 +18,7 @@
       <h4><strong></strong> </h4>
       <hr>
       <div class="d-flex text-center">
-      <%= f.button :submit, "Share my workspace", class: "btn btn-primary btn-lg"%>
+      <%= f.button :submit, "Share my workspace", class: "btn btn-primary btn-lg width:100%"%>
       </div>
 
       <% end %>
