@@ -65,8 +65,8 @@
       <% if current_user == @workspace.user %>
         <div class="flat-show-card">
             <div class="flex-align">
-              <%= link_to 'edit this workspace', edit_workspace_path(@workspace) %>
-              <%= link_to "Delete", workspace_path(@workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+              <%= link_to 'Edit Workspace', edit_workspace_path(@workspace), style: 'color: #0D6EFD ; text-decoration: none;' %>
+              <%= link_to "Delete Workspace", workspace_path(@workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style: 'color: #ff0000; text-decoration: none;'%>
             </div>
           </div>
         <% end %>
