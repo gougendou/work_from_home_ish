@@ -40,9 +40,9 @@ sam = User.create(
 puts("users created")
 
 tom_workspace = Workspace.new(
-  name: "tom's desk",
+  name: "Tom's desk",
   price: rand(15..40),
-  address: Faker::Address.full_address,
+  address: "146 Clapham High St, London SW4 7UH",
   description: 'lovely desk put up for rent by tom',
   booking_status: true
 )
@@ -52,9 +52,9 @@ tom_workspace.photos.attach(io: file, filename: "desk1.png", content_type: "imag
 tom_workspace.save
 
 angus_workspace = Workspace.new(
-  name: "angus's desk",
+  name: "Angus' desk",
   price: rand(15..40),
-  address: Faker::Address.full_address,
+  address: "14 Bohemia Pl, London E8 1DU",
   description: 'lovely desk put up for rent by angus',
   booking_status: true
 )
@@ -64,9 +64,9 @@ angus_workspace.photos.attach(io: file, filename: "desk2.png", content_type: "im
 angus_workspace.save
 
 matt_workspace = Workspace.new(
-  name: "matt's desk",
+  name: "Matt's desk",
   price: rand(15..40),
-  address: Faker::Address.full_address,
+  address: "16-19 Upper St Martin's Ln, London WC2H 9EF",
   description: 'lovely desk put up for rent by matt',
   booking_status: true
 )
@@ -76,9 +76,9 @@ matt_workspace.photos.attach(io: file, filename: "desk3.png", content_type: "ima
 matt_workspace.save
 
 sam_workspace = Workspace.new(
-  name: "sam's desk",
+  name: "Sam's desk",
   price: rand(15..40),
-  address: Faker::Address.full_address,
+  address: " Arundel House, 4 Palace Green, Londra, W8 4QD",
   description: 'lovely desk put up for rent by sam',
   booking_status: true
 )
