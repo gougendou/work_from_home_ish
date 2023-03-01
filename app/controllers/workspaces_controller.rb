@@ -5,7 +5,7 @@ class WorkspacesController < ApplicationController
     @markers = @workspaces.geocoded.map do |workspace|
       {
         lat: workspace.latitude,
-        lng: workspace.longitude
+        lng: workspace.longitude,
       }
     end
   end
