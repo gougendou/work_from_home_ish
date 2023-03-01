@@ -29,7 +29,7 @@
               <%# <span>£<%= booking.workspace.price.round %></span>
               <span>£<%= ((booking.end_date - booking.start_date + 1) * booking.workspace.price).round %> total (£<%=booking.workspace.price.round%> / day) </span>
             </div>
-
+            <p><%= link_to "Cancel booking", booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
           </div>
         </div>
       </a>
