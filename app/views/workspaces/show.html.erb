@@ -16,11 +16,11 @@
 
     <div class="col-4">
       <div class="flat-show-card">
-        <h5>Book this desk!</h5>
+        <h3><b>Make your booking</b></h3>
         <%= simple_form_for [@workspace, @booking] do |f| %>
           <%= f.input :start_date, as: :date, html5: true  %>
           <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit 'Reserve Workspace', class: 'btn btn-primary' %>
         <% end %>
 
         <%# <form action="">
