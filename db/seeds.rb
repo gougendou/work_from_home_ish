@@ -13,7 +13,6 @@ User.destroy_all
 Workspace.destroy_all
 Booking.destroy_all
 
-
 tom = User.create(
   first_name: 'tom',
   last_name: 'apted',

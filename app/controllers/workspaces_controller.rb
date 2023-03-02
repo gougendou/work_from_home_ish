@@ -55,6 +55,11 @@ class WorkspacesController < ApplicationController
     redirect_to workspace_path(@workspace)
   end
 
+  def my_workspaces
+    user = current_user
+    @workspaces = user.workspaces
+  end
+
   private
 
   def strong_params
