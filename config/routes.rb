@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get '/workspaces/my_workspaces', to: 'workspaces#my_workspaces'
   resources :workspaces do
     resources :bookings, only: [:create]
   end
