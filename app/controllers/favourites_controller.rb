@@ -6,7 +6,7 @@ class FavouritesController < ApplicationController
 
     def create
       @favourite = Favourite.create(workspace_id: params[:workspace_id], user_id: current_user.id)
-      redirect_to workspaces_path
+      redirect_back fallback_location: workspaces_path
     end
 
     def destroy
