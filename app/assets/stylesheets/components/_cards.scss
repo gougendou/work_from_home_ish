@@ -167,3 +167,12 @@
 .review-comment {
   margin-left: 30px;
 }
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#favourite-heart:hover {
+  background-color: red;
+}
