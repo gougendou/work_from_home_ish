@@ -13,13 +13,13 @@
         <div class="flat-card">
           <div class="flat-card-image" style="background-image: url('<%= cl_image_path favourite.workspace.photos[0].key, crop: :fill %>')"></div>
             <%= link_to favourite_path(favourite), style: "color: #FF0000; position: absolute; top: 4px; right: 8px; opacity: 0.8", class: "my-0", data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove from your Wishlist?"} do %>
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart fa-lg"></i>
             <% end %>
           <div class="flat-card-content" style="overflow: hidden;">
             <div class="booking-workspace-title">
               <h4><%= favourite.workspace.name %></h4>
             </div>
-            <div class="flex-align booking-medium-text"">
+            <div class="flex-align booking-medium-text">
               <p><%= favourite.workspace.address %></p>
             </div>
             <a class="btn btn-primary" href="<%=workspace_path(favourite.workspace_id)%>">Reserve this desk!</a>

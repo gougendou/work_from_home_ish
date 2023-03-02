@@ -17,7 +17,13 @@
     <div class="col-4">
       <% if current_user != @workspace.user %>
         <div class="flat-show-card">
-          <h3><b>Make your booking</b></h3>
+          <div class="booking-header">
+            <h3><b>Make your booking</b></h3>
+            <div id="favourite-heart" ><i style="color:#FF0000;" class="fa-regular fa-heart fa-lg"></i>
+
+            </div>
+            <%# <div id="onhoverheart">Add to Wishlist</div> %>
+          </div>
           <%= simple_form_for [@workspace, @booking] do |f| %>
             <%= f.input :start_date, as: :date, html5: true  %>
             <%= f.input :end_date, as: :date, html5: true  %>
