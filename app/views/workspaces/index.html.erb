@@ -1,6 +1,6 @@
 <button onclick="myFunction()" class="btn btn-primary vertical-center" style="border-radius: 30px;">Show map ◐</button>
 
-<div class="banner mt-0">
+<div class="banner m-0">
   <%# <div class="row padding-landing" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1590166045671-9bb0c0a76ea4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); background-size: 1449px auto;">
       <div class="col-12 title-index-padding">
         <h1 class="landing-page-title">Work from home.</h1>
@@ -8,7 +8,7 @@
       </div>
     </div> %>
 
-    <div id="map"
+    <div id="map" class="m-0"
       data-controller="map"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
       style="width: 98%; height: 600px; margin: 10px;"
@@ -16,8 +16,8 @@
     </div>
 </div>
 
-<div class="flex-container">
-  <div class="col-sm-12">
+<div class="flex-container mt-3">
+  <div class="col-sm-10 mx-auto">
     <!-- flat cards section -->
         <div class="row">
           <% @workspaces.each do |workspace| %>
