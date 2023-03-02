@@ -27,9 +27,17 @@
         <div class="flat-show-card">
           <div class="booking-header">
             <h3><b>Make your booking</b></h3>
-            <div id="favourite-heart" ><i style="color:#FF0000;" class="fa-regular fa-heart fa-lg"></i>
-
-            </div>
+            <% if user_signed_in? %>
+              <% if current_user.favourites.find_by(workspace_id: @workspace.id) %>
+                <%= link_to favourite_path(current_user.favourites.find_by(workspace_id: @workspace.id)), style: "color: #FF0000;", class: "my-0", data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-heart fa-lg"></i>
+                <% end %>
+              <% else %>
+              <%= link_to favourites_path(workspace_id: @workspace.id), style: "color: #FF0000;", class: "my-0", data: {turbo_method: :post} do %>
+                <i class="fa-regular fa-heart fa-lg"></i>
+                <% end %>
+              <% end %>
+            <% end %>
             <%# <div id="onhoverheart">Add to Wishlist</div> %>
           </div>
           <%= simple_form_for [@workspace, @booking] do |f| %>
