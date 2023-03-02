@@ -12,19 +12,33 @@
     <%# added by Sam to fix JS error in heroku %>
     <%# <%= javascript_include_tag "bootstrap" if Rails.env.development? %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+
+
   </head>
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/workspaces">
-      <%= image_tag "wfh_logo.png" %>
+    <a class="navbar-brand logo" href="/workspaces">
+      <%= image_tag "desk_logo.png"%>
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="collapse navbar-collapse mx-auto">
+     <%= form_with url: workspaces_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a desk"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary a:hover" %>
+      <% end %>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <ul class="navbar-nav me-auto">
           <%# <li class="nav-item active">
             <a class="nav-link" href="#">Home</a>
@@ -36,6 +50,7 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/itkf94aza2outbuythpx" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Wishlist (#{current_user.favourites.count})", "/favourites", class: "dropdown-item" %>
               <%= link_to "Your bookings (#{current_user.bookings.count})", "/bookings", class: "dropdown-item" %>
               <%= link_to "Your workspaces (#{current_user.workspaces.count})", workspaces_my_workspaces_path, class: "dropdown-item" %>
               <%= link_to "Add Workspace", new_workspace_path, class: "dropdown-item" %>

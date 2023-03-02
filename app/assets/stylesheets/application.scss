@@ -19,7 +19,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.search{
+    text-align: center;
+    display: inline-block;
+}
 .flat-card {
   width: 100%;
   overflow: hidden;
@@ -27,7 +30,7 @@
   margin: .5rem 0 1rem 0;
   background-color: #fff;
   border-radius: 2px;
-  padding-left: 8px;
+  // padding-left: 8px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
 
@@ -102,7 +105,19 @@
   font-size: 14px;
   font-weight: lighter;
   color: grey;
+  display: inline-block;
+  width: 190px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+// .truncate {
+//   width: 250px;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
 
 .booking-small-text{
   font-size: 12px;
@@ -177,6 +192,10 @@ a:hover{
 
 .col-sm-5, .col-sm-7 {
   width: 50%;
+}
+
+.logo-image {
+    width: 200px; /* or whatever size you want */
 }
 
 // @media screen and (min-height: 650px) {

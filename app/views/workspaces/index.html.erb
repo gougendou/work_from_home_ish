@@ -19,7 +19,21 @@
                 <% else %>
                   <div class="flat-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')"></div>
                 <% end %>
+              <% if user_signed_in? %>
+                <% if current_user.favourites.find_by(workspace_id: workspace.id) %>
+                  <%= link_to favourite_path(current_user.favourites.find_by(workspace_id: workspace.id)), style: "color: #FF0000; position: absolute; top: 4px; right: 8px; opacity: 0.8", class: "my-0", data: {turbo_method: :delete} do %>
+                  <i class="fa-solid fa-heart fa-lg"></i>
+                  <% end %>
+                <% else %>
+                <%= link_to favourites_path(workspace_id: workspace.id), style: "color: #FFFFFF; position: absolute; top: 4px; right: 8px; opacity: 0.8", class: "my-0", data: {turbo_method: :post} do %>
+                  <i class="fa-regular fa-heart fa-lg"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
                 <div class="flat-card-content" style="overflow: hidden;">
+
+
+
                   <div class="booking-workspace-title">
                     <h4><%= workspace.name %></h4>
                   </div>
