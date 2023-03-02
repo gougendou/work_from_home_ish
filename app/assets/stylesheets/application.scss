@@ -19,7 +19,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.search{
+    text-align: center;
+    display: inline-block;
+}
 .flat-card {
   width: 100%;
   overflow: hidden;
@@ -177,6 +180,10 @@ a:hover{
 
 .col-sm-5, .col-sm-7 {
   width: 50%;
+}
+
+.logo-image {
+    width: 200px; /* or whatever size you want */
 }
 
 // @media screen and (min-height: 650px) {
