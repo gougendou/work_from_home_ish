@@ -51,8 +51,8 @@
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/itkf94aza2outbuythpx" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Wishlist (#{current_user.favourites.count})", "/favourites", class: "dropdown-item" %>
-              <%= link_to "Your bookings (#{current_user.bookings.count})", "/bookings", class: "dropdown-item" %>
-              <%= link_to "Your workspaces (#{current_user.workspaces.count})", workspaces_my_workspaces_path, class: "dropdown-item" %>
+              <%= link_to "My bookings (#{current_user.bookings.count})", "/bookings", class: "dropdown-item" %>
+              <%= link_to "My workspaces (#{current_user.workspaces.count})", workspaces_my_workspaces_path, class: "dropdown-item" %>
               <%= link_to "Add Workspace", new_workspace_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
