@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_02_181826) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_111215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_181826) do
     t.index ["workspace_id"], name: "index_favourites_on_workspace_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rating"
+    t.bigint "workspace_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workspace_id"], name: "index_reviews_on_workspace_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -98,5 +107,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_181826) do
   add_foreign_key "bookings", "workspaces"
   add_foreign_key "favourites", "users"
   add_foreign_key "favourites", "workspaces"
+  add_foreign_key "reviews", "workspaces"
   add_foreign_key "workspaces", "users"
 end
