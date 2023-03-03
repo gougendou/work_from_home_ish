@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "application" %>
 <% if @workspace.photos.attached? %>
   <div class="map" style="background-image: url('<%= cl_image_path @workspace.photos[0].key, crop: :fill %>')"></div>
 <% else %>
@@ -119,34 +120,45 @@
         <% end %>
 
     </div>
-  </div>
-</div>
 
-<h1><%= @workspace.name %> <small><%= @workspace.address %></small></h1>
+<div class="review-card d-flex-align">
+<h1>Reviews</h1>
+<h4><strong><%= pluralize @workspace.reviews.size, "review" %></strong></h4>
 
-<h2><%= pluralize @workspace.reviews.size, "review" %></h2>
-
-<div>
   <% if @workspace.reviews.blank? %>
     Be the first to leave a review for <%= @workspace.name %>
   <% else %>
     <% @workspace.reviews.each do |review| %>
-      <p><%= review.content %></p>
+      <div class="review">
+        <p class="content"><%= review.content %></p>
+        <div class="rating">
+          <% if review.rating.present? %>
+            <% review.rating.round.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).round.times do %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+          <% else %>
+            No rating
+          <% end %>
+        </div>
+      </div>
     <% end %>
   <% end %>
-  <div> 
-  <%= simple_form_for([@workspace, @review]) do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <%= f.button :submit %>
-<% end %>
-
-<%= link_to "Back to all workspaces", workspaces_path %>
+  <h4><strong>Leave a review</strong></h4>
+  <div class="review-form"> 
+    <%= simple_form_for([@workspace, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit 'Leave a review', class: 'btn btn-primary' %>
+    <% end %>
   </div> 
 </div>
 
 
-
+  </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

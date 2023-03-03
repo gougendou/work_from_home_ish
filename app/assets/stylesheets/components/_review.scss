@@ -1,0 +1,50 @@
+// .review {
+//     border: 1px solid #ccc;
+//     padding: 10px;
+//     margin-bottom: 20px;
+//   }
+
+.review {
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1); /* Add a faint shadow */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none; /* Remove the border */
+  }
+  
+  .rating {
+    display: inline-block;
+    
+  }
+  
+  .star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('path/to/star.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .star::before {
+    content: '';
+    display: none;
+  }
+  
+  .rating .star:hover:before,
+  .rating .star:hover ~ .star:before,
+  .rating .star.checked:before,
+  .rating .star.checked ~ .star:before {
+    content: '\2605';
+    display: inline-block;
+    color: #ffdc2d;
+    text-shadow: 1px 1px #888;
+  }
+  
+  .content {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .review-form {
+    margin-top: 20px;
+  }

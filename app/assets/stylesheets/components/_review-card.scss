@@ -1,0 +1,48 @@
+.review-card {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none; /* Remove the border */
+}
+  
+  .review-card .review {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+  }
+  
+  .review-card .review:last-child {
+    border-bottom: none;
+  }
+  
+  .review-card .review .content {
+    font-size: 1.2em;
+    // font-weight: bold;
+  }
+  
+  .review-card .review .rating {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+  }
+  
+  .review-card .review .rating .star {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('/path/to/star.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5em;
+  }
+  
+  .review-card .review .rating .star.checked {
+    background-image: url('/path/to/star-filled.svg');
+  }
+  
+  .review-card h4 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+  }
+  
+  .review-card .review-form {
+    margin-top: 1em;
+  }
