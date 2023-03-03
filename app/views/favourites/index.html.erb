@@ -15,7 +15,7 @@
             <%= link_to favourite_path(favourite), style: "color: #FF0000; position: absolute; top: 4px; right: 8px; opacity: 0.8", class: "my-0", data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove from your Wishlist?"} do %>
               <i class="fa-solid fa-heart fa-lg"></i>
             <% end %>
-          <div class="flat-card-content" style="overflow: hidden; height: 150px;">
+          <div class="flat-card-content" style="overflow: hidden; height: 180px;">
             <div class="booking-workspace-title">
               <h4><%= favourite.workspace.name %></h4>
             </div>
