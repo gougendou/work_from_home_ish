@@ -21,7 +21,7 @@
     <!-- flat cards section -->
         <div class="row">
           <% @workspaces.each do |workspace| %>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <a class="plain-link" href="<%= workspace_path(workspace) %>">
               <div class="flat-card">
                 <% if workspace.photos.attached? %>
@@ -42,13 +42,13 @@
                 <% end %>
                 <div class="flat-card-content" style="overflow: hidden;">
                   <div class="booking-workspace-title">
-                    <h4><%= workspace.name %></h4>
+                    <h6><%= workspace.name %></h6>
                   </div>
                   <div class="flex-align booking-medium-text">
                     <p><%= workspace.address %></p>
                   </div>
                   <div class="flex-align">
-                    <div class="align-items booking-small-text bold">
+                    <div class="flex-align booking-small-text bold">
                       <span>£<%= workspace.price%>0 / day</span>
                     </div>
                   </div>
@@ -66,10 +66,8 @@ function myFunction() {
   var x = document.getElementById("map");
   if (x.style.display === "none") {
     x.style.display = "block";
-    x.style.visibility = "visible";
   } else {
     x.style.display = "none";
-    x.style.visibility = "hidden";
   }
 }
 </script>
