@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/workspaces/my_workspaces', to: 'workspaces#my_workspaces'
   resources :workspaces do
     resources :bookings, only: [:create]
+    resources :reviews, only: [:create]
   end
   resources :bookings, only: [:destroy, :index]
   resources :favourites, only: [:index, :destroy, :create]

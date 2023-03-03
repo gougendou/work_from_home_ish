@@ -134,9 +134,18 @@
       <p><%= review.content %></p>
     <% end %>
   <% end %>
-</div>
+  <div> 
+  <%= simple_form_for([@workspace, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.button :submit %>
+<% end %>
 
 <%= link_to "Back to all workspaces", workspaces_path %>
+  </div> 
+</div>
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
