@@ -1,4 +1,4 @@
-<button onclick="myFunction()" class="btn btn-primary vertical-center" style="border-radius: 30px;">Show map ◐</button>
+<button onclick="myFunction()" id ="showmap" class="btn btn-primary vertical-center" style="border-radius: 30px;">Show map 🗺️</button>
 
 <div class="banner m-0">
   <%# <div class="row padding-landing" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1590166045671-9bb0c0a76ea4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'); background-size: 1449px auto;">
@@ -64,10 +64,12 @@
 <script>
 function myFunction() {
   var x = document.getElementById("map");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  if (x.classList.contains("d-none")) {
+    document.getElementById("map").classList.remove("d-none");
+    document.getElementById("showmap").innerText = "Show desks 💻"
   } else {
-    x.style.display = "none";
+    document.getElementById("map").classList.add("d-none");
+    document.getElementById("showmap").innerText = "Show map 🗺️"
   }
 }
 </script>

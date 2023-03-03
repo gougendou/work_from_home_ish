@@ -14,6 +14,9 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    setTimeout(() => {
+      document.getElementById("map").classList.add("d-none")
+    }, 1);
   }
 
   #addMarkersToMap() {
