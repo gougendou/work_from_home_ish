@@ -17,11 +17,11 @@
 </div>
 
 <div class="flex-container mt-3">
-  <div class="col-sm-10 mx-auto">
+  <div class="col-sm-9 mx-auto">
     <!-- flat cards section -->
         <div class="row">
           <% @workspaces.each do |workspace| %>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <a class="plain-link" href="<%= workspace_path(workspace) %>">
               <div class="flat-card">
                 <% if workspace.photos.attached? %>
